@@ -1,0 +1,20 @@
+{
+  "name": "react-hotkey-hook",
+  "version": "1.0.0",
+  "description": "A react hook which can execute any function for any keyboard shortcut.",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-hotkey",
+    "react-hotkeys",
+    "react-hotkey-hook",
+    "react-hotkeys-hook",
+    "react-keyboard-shortcuts",
+    "keyboard-shortcuts",
+    "hotkeys"
+  ],
+  "author": "Pranav Doshi",
+  "license": "ISC"
+}
