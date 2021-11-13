@@ -2,19 +2,40 @@
   "name": "react-hotkey-hook",
   "version": "1.0.0",
   "description": "A react hook which can execute any function for any keyboard shortcut.",
-  "main": "src/index.ts",
+  "main": "./lib/hotkey.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZaphodElevated/react-hotkey-hook.git"
   },
   "keywords": [
+    "react",
     "react-hotkey",
     "react-hotkeys",
     "react-hotkey-hook",
     "react-hotkeys-hook",
-    "react-keyboard-shortcuts",
-    "keyboard-shortcuts",
-    "hotkeys"
+    "hotkeys",
+    "hotkey",
+    "hotkey-hook",
+    "keyboard-shortcuts"
   ],
   "author": "Pranav Doshi",
-  "license": "ISC"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ZaphodElevated/react-hotkey-hook/issues"
+  },
+  "homepage": "https://github.com/ZaphodElevated/react-hotkey-hook#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-react": "^7.16.0",
+    "babel-loader": "^8.2.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "webpack": "^5.64.0",
+    "webpack-cli": "^4.9.1"
+  }
 }
