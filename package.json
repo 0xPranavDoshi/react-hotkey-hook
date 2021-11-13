@@ -1,6 +1,6 @@
 {
   "name": "react-hotkey-hook",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A react hook which can execute any function for any keyboard shortcut.",
   "main": "./lib/hotkey.js",
   "scripts": {
