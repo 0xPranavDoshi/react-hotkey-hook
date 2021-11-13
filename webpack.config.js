@@ -2,10 +2,10 @@ const path = require('path')
 
 module.exports = {
   mode: 'production',
-  entry: './src/clipboard.js',
+  entry: './src/hotkey.js',
   output: {
     path: path.resolve('lib'),
-    filename: 'clipboard.js',
+    filename: 'hotkey.js',
     libraryTarget: 'commonjs2',
   },
   module: {
