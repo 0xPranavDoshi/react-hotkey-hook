@@ -13,31 +13,57 @@ const useHotkey = (hotkeys, override = true, callback) => {
       'The second parameter to `useHotkey` must be a function that will be envoked when the keys are pressed.'
     )
 
+  // Array of keys needed to be pressed
   let hotkeys_arr = hotkeys.split('+')
 
-  // console.log('hotkeys: ', hotkeys_arr)
-
-  let keysPressed = {}
+  // List of current keys pressed
+  let keysPressed = []
 
   // Handle key down event
   const handleKeyDown = (event) => {
-    keysPressed[event.key] = true
+    if (keysPressed.includes(event.key)) return false
 
-    for (let i = 0; i < hotkeys_arr.length; i++) {
-      const hotkey = hotkeys_arr[i]
-      if (keysPressed[hotkey] && keysPressed[hotkeys_arr[i + 1]]) {
-        if (override) {
+    keysPressed.push(event.key)
+
+    // Reset if number of hotkeys exceeds required amount
+    if (keysPressed.length > hotkeys_arr.length) {
+      keysPressed = []
+      return false
+    }
+
+    // Overides any previous keyboard shortcut if overide is true
+    if (override) {
+      if (keysPressed.length < hotkeys_arr.length && keysPressed.length > 1) {
+        if (
+          JSON.stringify(hotkeys_arr.slice(0, keysPressed.length)) ===
+          JSON.stringify(keysPressed)
+        ) {
           event.preventDefault()
         }
-        callback()
       }
-      // }
     }
+
+    // Compare arrays for hotkey match
+    if (JSON.stringify(hotkeys_arr) === JSON.stringify(keysPressed)) {
+      if (override) {
+        // prevent default if overide is true
+        event.preventDefault()
+      }
+      // run callback function
+      callback()
+    }
+
+    return
   }
 
   // Handle key up event
   const handleKeyUp = (event) => {
-    delete keysPressed[event.key]
+    const index = keysPressed.indexOf(event.key)
+    if (index > -1) {
+      keysPressed.splice(index, 1)
+    }
+
+    return
   }
 
   // Key down event listener
