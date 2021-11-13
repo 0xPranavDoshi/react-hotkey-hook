@@ -38,7 +38,7 @@ function App() {
 
   return (
     <div className='container'>
-      <h1>Welcome to the Keydown Listening Component</h1>
+      <h1>Example for React Hotkey Hook</h1>
     </div>
   )
 }
