@@ -17,43 +17,45 @@ yarn add react-hotkey-hook
 Make sure to import the useHotkey hook from the library after it is installed
 
 ```js
-import useHotkey from 'react-hotkey-hook'
+import useHotkey from "react-hotkey-hook";
 ```
 
 # Usage
 
 ```js
-import './App.css'
-import React from 'react'
-import useHotkey from 'react-hotkey-hook'
+import "./App.css";
+import React from "react";
+import useHotkey from "react-hotkey-hook";
 
 function App() {
   const onKeyPress = () => {
-    console.log('key pressed')
-  }
+    console.log("key pressed");
+  };
 
-  useHotkey('Control+a', true, onKeyPress)
+  useHotkey("Control+a", true, onKeyPress);
 
-  useHotkey('Shift+A', true, onKeyPress)
+  useHotkey("Shift+A", true, onKeyPress);
 
   return (
-    <div className='container'>
+    <div className="container">
       <h1>Example for React Hotkey Hook</h1>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
 ```
 
 # Options
 
-`hotkeys` The combination of hotkeys. Follow the format above in the example. Make sure to make the
+All options are optional and have a default value which you can override to change the behavior of the hook.
 
-`overide` Prevents default event when true. True on default.
-
-`callback` Function that will be envoked when the keys are pressed.
+| Option     | Type         | Description                                                            |
+| ---------- | ------------ | ---------------------------------------------------------------------- |
+| `hotkeys`  | `string`     | The combination of hotkeys.                                            |
+| `overide`  | `boolean`    | Optional Parameter. Prevents default event when true. True on default. |
+| `callback` | `() => void` | Function that will be called when the combination of keys are pressed. |
 
 # License
 
-MIT
+Distributed under the MIT License. See `LICENSE` for more information.
